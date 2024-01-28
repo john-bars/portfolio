@@ -30,4 +30,21 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  
+  .custom-scrollbar {
+    /* For WebKit (Chrome, Safari) */
+    &::-webkit-scrollbar {
+      width: 0; 
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent; 
+    }
+  
+    /* For Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  
+    /* For Internet Explorer and Edge */
+    -ms-overflow-style: none;
+  }
 }
