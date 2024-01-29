@@ -1,10 +1,14 @@
+"use client";
+
 import { links, socials } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import { NavLink } from ".";
+import { useActiveSectionContext } from "@/context/active-section-context";
 
 export default function Header() {
+  const { activeSection, setActiveSection } = useActiveSectionContext();
+
   return (
     <header className="lg:sticky lg:inset-y-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
       <div>
@@ -21,7 +25,12 @@ export default function Header() {
           <ul className="mt-16 w-max">
             {links.map((link) => (
               <li key={link.hash}>
-                <NavLink name={link.name} hash={link.hash} />
+                <NavLink
+                  name={link.name}
+                  hash={link.hash}
+                  activeSection={activeSection}
+                  setActiveSection={setActiveSection}
+                />
               </li>
             ))}
           </ul>

@@ -1,30 +1,39 @@
 "use client";
-import { useActiveSectionContext } from "@/context/ActiveSectionContext";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 
-const NavLink = ({ name, hash }) => {
-  const { activeSection, setActiveSection, setTimeOfLastClick } =
-    useActiveSectionContext();
-  console.log("active section: ", activeSection);
-
+const NavLink = ({ name, hash, activeSection, setActiveSection }) => {
   return (
     <Link
       href={hash}
+      onClick={() => setActiveSection(name)}
       className={`group flex items-center py-3`}
-      onClick={() => {
-        setActiveSection(hash);
-        setTimeOfLastClick(Date.now());
-      }}
     >
-      <span
-        className={`${activeSection === hash ? "w-16 bg-slate-200" : "w-8"} mr-4 h-px bg-slate-600 transition-all group-hover:bg-slate-200 group-focus-visible:bg-slate-200 motion-reduce:transition-none`}
-      ></span>
-      <span
-        className={`${activeSection === hash && "text-slate-100"} flex text-xs font-bold uppercase tracking-widest text-slate-600 group-hover:text-slate-200 
-                  group-focus-visible:text-slate-200`}
+      <motion.span
+        layoutId="activeSection"
+        transition={{
+          type: "spring",
+          stiffness: 380,
+          damping: 30,
+        }}
+        className={`mr-4 h-px transition-all group-hover:bg-slate-200 group-focus-visible:bg-slate-200 motion-reduce:transition-none ${
+          activeSection === name ? "w-16 bg-white" : "w-8 bg-slate-600"
+        }`}
+      ></motion.span>
+      <motion.span
+        layoutId="activeSection"
+        transition={{
+          type: "spring",
+          stiffness: 380,
+          damping: 30,
+        }}
+        className={`flex text-xs font-bold uppercase tracking-widest group-hover:text-slate-200 group-focus-visible:text-slate-200 ${
+          activeSection === name ? "text-white" : "text-slate-600"
+        }`}
       >
         {name}
-      </span>
+      </motion.span>
     </Link>
   );
 };
