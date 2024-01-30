@@ -1,8 +1,8 @@
-import Header from "./Header";
+import Hero from "./Hero";
+import Nav from "./Nav";
 import About from "./About";
 import Projects from "./Projects";
 import Skills from "./Skills";
 import Contact from "./Contact";
-import NavLink from "./NavLink";
 
-export { Header, About, Projects, Skills, Contact, NavLink };
+export { Hero, Nav, About, Projects, Skills, Contact };

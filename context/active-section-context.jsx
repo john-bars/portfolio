@@ -7,7 +7,7 @@ export const ActiveSectionContext = createContext(null);
 
 // A provider component for the ActiveSectionContext
 export default function ActiveSectionContextProvider({ children }) {
-  const [activeSection, setActiveSection] = useState("About");
+  const [activeSection, setActiveSection] = useState("");
 
   return (
     <ActiveSectionContext.Provider value={{ activeSection, setActiveSection }}>

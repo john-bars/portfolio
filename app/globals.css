@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -14,7 +14,7 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 /* body {
   color: rgb(var(--foreground-rgb));
@@ -27,28 +27,23 @@
 } */
 
 body {
-  @apply bg-slate-900 text-slate-400 
+  @apply bg-black text-white
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .section {
+    @apply h-svh lg:py-24 flex flex-col justify-center
   }
-  
-  .custom-scrollbar {
-    /* For WebKit (Chrome, Safari) */
-    &::-webkit-scrollbar {
-      width: 0; 
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: transparent; 
-    }
-  
-    /* For Firefox */
-    scrollbar-width: thin;
-    scrollbar-color: transparent transparent;
-  
-    /* For Internet Explorer and Edge */
-    -ms-overflow-style: none;
+
+  .nav {
+    @apply lg:sticky lg:inset-y-0 lg:flex lg:h-svh lg:flex-col lg:justify-between lg:py-24
+  }
+
+  .hero {
+    @apply text-8xl font-semibold leading-tight
+  }
+
+  .title {
+    @apply mb-10 text-4xl text-white
   }
 }
