@@ -26,13 +26,24 @@
     rgb(var(--background-start-rgb));
 } */
 
+/* body {
+  @apply bg-black text-white 
+} */
 body {
-  @apply bg-slate-900 text-slate-400 
+  @apply bg-black text-white font-medium leading-relaxed antialiased selection:bg-slate-600 selection:text-slate-300
+}
+
+p {
+  @apply text-lg mb-4
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .header-mobile {
+    @apply uppercase text-slate-100 sticky top-0
   }
   
   .custom-scrollbar {

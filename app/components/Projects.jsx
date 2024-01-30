@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 
 export default function Projects() {
   const { ref, inView } = useInView({
-    rootMargin: "-25% 0px",
+    // rootMargin: "-25% 0px",
     threshold: 0.75,
   });
   const { setActiveSection } = useActiveSectionContext();

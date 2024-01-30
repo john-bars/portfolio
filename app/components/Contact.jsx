@@ -7,7 +7,7 @@ import { useInView } from "react-intersection-observer";
 export default function Contact() {
   const { ref, inView } = useInView({
     // rootMargin: "-10% 0px",
-    // threshold: 0.75,
+    threshold: 0.75,
   });
   const { setActiveSection } = useActiveSectionContext();
 

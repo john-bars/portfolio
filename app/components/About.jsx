@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 
 export default function About() {
   const { ref, inView } = useInView({
-    rootMargin: "-25% 0px",
+    // rootMargin: "-25% 0px",
     threshold: 0.75,
   });
   const { setActiveSection } = useActiveSectionContext();
@@ -20,7 +20,7 @@ export default function About() {
 
   return (
     <section ref={ref} id="about" className="scroll-mt-16 lg:scroll-mt-24">
-      <p className="mb-4">
+      <p>
         In 2020, following my graduation and successful completion of the
         licensure exam, I embarked on a career as an Automated Teller Machine
         (ATM) technician, dedicating two years to working on the mechanical and
@@ -28,7 +28,7 @@ export default function About() {
         curiosity about firmware development sparked, prompting me to explore
         online programming courses.
       </p>
-      <p className="mb-4">
+      <p>
         Surprisingly, my journey led me to the realm of Web Development, a field
         seemingly distant from my original focus. Nevertheless, the fusion of my
         passion for mechatronics and programming inspired me to delve into the
