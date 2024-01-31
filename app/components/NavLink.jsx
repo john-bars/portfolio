@@ -24,12 +24,15 @@ const NavLink = () => {
                 stiffness: 380,
                 damping: 30,
               }}
-              className={`text-xs font-bold uppercase tracking-widest hover:text-slate-200 focus-visible:text-slate-200 ${
+              className={`text-xs font-bold uppercase tracking-widest hover:text-slate-200 focus-visible:text-slate-200 max-md:hidden ${
                 activeSection === link.name ? "text-white" : "text-slate-600"
               }`}
             >
               {link.name}
             </motion.span>
+            <motion.span
+              className={`size-3 rounded-full hover:bg-slate-200 focus-visible:bg-slate-200 md:hidden ${activeSection === link.name ? "bg-white" : "bg-slate-800"}`}
+            ></motion.span>
           </Link>
         </li>
       ))}

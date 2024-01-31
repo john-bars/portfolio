@@ -15,14 +15,14 @@ const Hero = () => {
   }, [inView, setActiveSection]);
 
   return (
-    <section ref={ref} id="hero" className="section">
-      {/* <div className="flex flex-col"> */}
-      <h1 className="hero">Hi there, I&apos;m</h1>
-      <h1 className="hero self-center">John Bars Quipia</h1>
-      <p className="self-center leading-loose opacity-70 lg:text-3xl">
-        A React Web Developer
-      </p>
-      {/* </div> */}
+    <section ref={ref} id="hero" className="section items-center">
+      <div className="flex flex-col md:w-3/5 lg:w-full">
+        <h1 className="hero">Hi there, I&apos;m</h1>
+        <h1 className="hero self-end">John Bars Quipia</h1>
+        <p className="self-center leading-loose opacity-70 lg:text-3xl">
+          A React Web Developer
+        </p>
+      </div>
     </section>
   );
 };

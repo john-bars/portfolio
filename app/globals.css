@@ -26,7 +26,7 @@ body {
   }
 
   .hero {
-    @apply text-4xl lg:text-7xl font-semibold leading-tight
+    @apply text-4xl md:text-5xl lg:text-7xl font-semibold leading-tight
   }
 
   .link-mobile {
