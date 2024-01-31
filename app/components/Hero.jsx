@@ -16,11 +16,13 @@ const Hero = () => {
 
   return (
     <section ref={ref} id="hero" className="section">
+      {/* <div className="flex flex-col"> */}
       <h1 className="hero">Hi there, I&apos;m</h1>
       <h1 className="hero self-center">John Bars Quipia</h1>
-      <p className="self-center text-3xl leading-loose opacity-70">
+      <p className="self-center leading-loose opacity-70 lg:text-3xl">
         A React Web Developer
       </p>
+      {/* </div> */}
     </section>
   );
 };

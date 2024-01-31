@@ -1,22 +1,14 @@
 "use client";
 
-import { useActiveSectionContext } from "@/context/active-section-context";
-import React, { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import { useSectionInView } from "@/lib/hooks";
+import { motion } from "framer-motion";
 
 export default function Projects() {
-  const { ref, inView } = useInView({ threshold: 0.5 });
-  const { setActiveSection } = useActiveSectionContext();
-
-  useEffect(() => {
-    if (inView) {
-      setActiveSection("Projects");
-    }
-  }, [inView, setActiveSection]);
+  const { ref } = useSectionInView("Projects");
 
   return (
-    <section ref={ref} id="projects" className="section">
-      <h2 className="title">Projects</h2>
+    <motion.section id="projects" ref={ref} className="section">
+      <h2 className="title">My Projects</h2>
       <p className="mb-8">
         In 2020, following my graduation and successful completion of the
         licensure exam, I embarked on a career as an Automated Teller Machine
@@ -42,6 +34,6 @@ export default function Projects() {
         focus, my journey in the world of technology continues, and I still
         harbor the desire to delve into firmware development in the future.
       </p>
-    </section>
+    </motion.section>
   );
 }

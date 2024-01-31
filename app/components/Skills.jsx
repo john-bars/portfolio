@@ -1,18 +1,9 @@
 "use client";
 
-import { useActiveSectionContext } from "@/context/active-section-context";
-import React, { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function Skills() {
-  const { ref, inView } = useInView({ threshold: 0.5 });
-  const { setActiveSection } = useActiveSectionContext();
-
-  useEffect(() => {
-    if (inView) {
-      setActiveSection("Skills");
-    }
-  }, [inView, setActiveSection]);
+  const { ref } = useSectionInView("Skills");
 
   return (
     <section ref={ref} id="skills" className="section">

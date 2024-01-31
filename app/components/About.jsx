@@ -1,23 +1,15 @@
 "use client";
 
-import { useActiveSectionContext } from "@/context/active-section-context";
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import { useSectionInView } from "@/lib/hooks";
+import { motion } from "framer-motion";
 
 export default function About() {
-  const { inView, ref } = useInView({ threshold: 0.5 });
-  const { setActiveSection } = useActiveSectionContext();
-
-  useEffect(() => {
-    if (inView) {
-      setActiveSection("About");
-    }
-  }, [inView, setActiveSection]);
+  const { ref } = useSectionInView("About");
 
   return (
-    <section id="about" ref={ref} className="section">
-      <h2 className="title">About</h2>
-      <p className="mb-8">
+    <motion.section id="about" ref={ref} className="section">
+      <h2 className="title">About Me</h2>
+      <p className="mb-8 text-justify">
         In 2020, following my graduation and successful completion of the
         licensure exam, I embarked on a career as an Automated Teller Machine
         (ATM) technician, dedicating two years to working on the mechanical and
@@ -25,7 +17,7 @@ export default function About() {
         curiosity about firmware development sparked, prompting me to explore
         online programming courses.
       </p>
-      <p className="mb-8">
+      <p className="mb-8 text-justify">
         Surprisingly, my journey led me to the realm of Web Development, a field
         seemingly distant from my original focus. Nevertheless, the fusion of my
         passion for mechatronics and programming inspired me to delve into the
@@ -33,7 +25,7 @@ export default function About() {
         development, this unexpected path has proven to be both fulfilling and
         enlightening.
       </p>
-      <p>
+      <p className="text-justify">
         Fast forward to the present, I&apos;ve acquired proficiency in creating
         websites using React, TypeScript, and Next.js. My aspirations extend
         beyond front-end development, as I&apos;m now actively working towards
@@ -42,6 +34,6 @@ export default function About() {
         focus, my journey in the world of technology continues, and I still
         harbor the desire to delve into firmware development in the future.
       </p>
-    </section>
+    </motion.section>
   );
 }

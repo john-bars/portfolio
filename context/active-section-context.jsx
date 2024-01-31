@@ -8,9 +8,17 @@ export const ActiveSectionContext = createContext(null);
 // A provider component for the ActiveSectionContext
 export default function ActiveSectionContextProvider({ children }) {
   const [activeSection, setActiveSection] = useState("");
+  const [timeOfLastClick, setTimeOfLastClick] = useState(0);
 
   return (
-    <ActiveSectionContext.Provider value={{ activeSection, setActiveSection }}>
+    <ActiveSectionContext.Provider
+      value={{
+        activeSection,
+        setActiveSection,
+        timeOfLastClick,
+        setTimeOfLastClick,
+      }}
+    >
       {children}
     </ActiveSectionContext.Provider>
   );
