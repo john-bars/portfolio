@@ -15,6 +15,7 @@ export default function Contact() {
           john.barsq@gmail.com
         </Link>
       </p>
+      <footer></footer>
     </section>
   );
 }

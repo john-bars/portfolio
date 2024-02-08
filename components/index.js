@@ -1,21 +1,21 @@
-import Hero from "./Hero";
+import Intro from "./Intro";
 import Logo from "./Logo";
 import Nav from "./Nav";
-import MobileNav from "./MobileNav";
-import NavLink from "./NavLink";
+import Socials from "./Socials";
 import About from "./About";
 import Projects from "./Projects";
+import ProjectInfo from "./ProjectInfo";
 import Skills from "./Skills";
 import Contact from "./Contact";
 
 export {
-  Hero,
+  Intro,
   Logo,
   Nav,
-  MobileNav,
-  NavLink,
+  Socials,
   About,
   Projects,
+  ProjectInfo,
   Skills,
   Contact,
 };
