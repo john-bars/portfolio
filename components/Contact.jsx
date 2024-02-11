@@ -3,6 +3,8 @@
 import { useSectionInView } from "@/lib/hooks";
 import Link from "next/link";
 
+import { Footer } from ".";
+
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
 
@@ -15,7 +17,7 @@ export default function Contact() {
           john.barsq@gmail.com
         </Link>
       </p>
-      <footer></footer>
+      <Footer />
     </section>
   );
 }

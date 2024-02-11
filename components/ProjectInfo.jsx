@@ -14,32 +14,38 @@ const ProjectInfo = ({ title, onClick, isVisible, info, images }) => {
         {isVisible ? <RiSubtractFill className="" /> : <MdAdd />}
       </button>
       {isVisible && (
-        <div>
-          <div className="mb-5">{info}</div>
-          <div className="relative flex gap-5 overflow-x-auto">
-            <Image
-              src={images.web}
-              alt="desktop-screenshot"
-              width={640}
-              height={400}
-              className="z-10 h-auto w-[50vw]"
-            />
-            <Image
-              src={images.tablet}
-              alt="desktop-screenshot"
-              width={640}
-              height={200}
-              className="z-10 h-auto w-3/4"
-            />
-            <Image
-              src={images.mobile}
-              alt="desktop-screenshot"
-              width={640}
-              height={200}
-              className="z-10 h-auto w-3/4"
-            />
+        <>
+          <p className="mb-5">{info}</p>
+          <div className="custom-scrollbar flex h-[350px] w-full gap-5 overflow-x-auto">
+            <div className="image-container">
+              <Image
+                src={images.web}
+                alt="desktop-screenshot"
+                width={600}
+                height={300}
+                className="image-mobile md:image-tablet-web"
+              />
+            </div>
+            <div className="image-container">
+              <Image
+                src={images.tablet}
+                alt="tablet-screenshot"
+                width={600}
+                height={300}
+                className="image-tablet-web"
+              />
+            </div>
+            <div className="image-container">
+              <Image
+                src={images.mobile}
+                alt="mobile-screenshot"
+                width={600}
+                height={300}
+                className="image-tablet-web"
+              />
+            </div>
           </div>
-        </div>
+        </>
       )}
     </div>
   );

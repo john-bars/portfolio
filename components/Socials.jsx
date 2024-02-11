@@ -19,7 +19,11 @@ const Socials = () => {
             rel="noreferrer noopener"
             aria-label={`${social.name} (opens in a new tab)`}
             title={social.name}
+            className="group flex justify-end gap-3"
           >
+            <span className="hidden text-xs font-semibold tracking-widest md:group-hover:block">
+              {social.name}
+            </span>
             <Image
               src={social.imgSrc}
               alt={`${social.name} icon`}
@@ -27,7 +31,6 @@ const Socials = () => {
               height={18}
               className="opacity-40 invert hover:opacity-100"
             />
-            <span className="sr-only">{social.name}</span>
           </Link>
         </li>
       ))}

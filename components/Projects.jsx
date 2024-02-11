@@ -19,7 +19,15 @@ export default function Projects() {
       <div className="flex flex-col gap-5">
         <ProjectInfo
           title="DevFlow"
-          info="Devflow is a web app built using Next.js and TypeScript. It's is similar to the StackOverflow where a user can ask questions to the community. It also uses Chatgpt's  api to generate an AI answer and also allows user to find available jobs."
+          info={
+            <>
+              Devflow is a web app built using Next.js and TypeScript. It&apos;s
+              similar to Stack Overflow where users can ask questions to the
+              community. Additionally, it utilizes OpenAI&apos;s API to generate
+              AI answers and provides users with the ability to find available
+              jobs.
+            </>
+          }
           isVisible={visibleInfo === "DevFlow"}
           onClick={toggleInfo}
           images={{
@@ -30,9 +38,14 @@ export default function Projects() {
         />
         <ProjectInfo
           title="Portfolio Website"
-          info="Portfolio summary"
+          info="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
           isVisible={visibleInfo === "Portfolio Website"}
           onClick={toggleInfo}
+          images={{
+            web: "/images/devflow.jpg",
+            tablet: "/images/devflow-tablet.jpg",
+            mobile: "/images/devflow-mobile.jpg",
+          }}
         />
       </div>
 

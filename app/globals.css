@@ -27,6 +27,18 @@ py-8 md:py-20  */
     -ms-overflow-style: none;
   }
 
+  .image-tablet-web {
+    @apply  h-[250px] w-auto rounded-xl object-contain border-2
+  }
+
+  .image-mobile {
+    @apply w-full h-auto rounded-xl object-contain border-2
+  }
+
+  .image-container {
+    @apply h-auto w-full md:w-auto shrink-0 p-3 border-[#483c32] border-2 flex justify-center items-center rounded-2xl
+  }
+
   .intro {
     @apply max-md:self-center text-4xl md:text-5xl lg:text-7xl font-semibold
   }
