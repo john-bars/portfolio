@@ -28,6 +28,8 @@ export default function Projects() {
             isVisible={visibleInfo === project.title}
             onClick={toggleInfo}
             images={project.images}
+            code={project.github}
+            site={project.site}
           />
         ))}
       </div>
