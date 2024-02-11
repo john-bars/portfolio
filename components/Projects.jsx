@@ -10,7 +10,9 @@ export default function Projects() {
   const [visibleInfo, setVisibleInfo] = useState("");
 
   const toggleInfo = (title) => {
+    // setTimeout(() => {
     setVisibleInfo((prevState) => (prevState === title ? "" : title));
+    // }, 1000);
   };
 
   return (
@@ -31,9 +33,16 @@ export default function Projects() {
           isVisible={visibleInfo === "DevFlow"}
           onClick={toggleInfo}
           images={{
-            web: "/images/devflow.jpg",
-            tablet: "/images/devflow-tablet.jpg",
-            mobile: "/images/devflow-mobile.jpg",
+            web: [
+              "/images/devflow-web-dark.png",
+              "/images/devflow-web-light.png",
+            ],
+            mobile: [
+              "/images/devflow-tablet-dark.png",
+              "/images/devflow-tablet-light.png",
+              "/images/devflow-mobile-dark.png",
+              "/images/devflow-mobile-light.png",
+            ],
           }}
         />
         <ProjectInfo
@@ -41,39 +50,8 @@ export default function Projects() {
           info="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
           isVisible={visibleInfo === "Portfolio Website"}
           onClick={toggleInfo}
-          images={{
-            web: "/images/devflow.jpg",
-            tablet: "/images/devflow-tablet.jpg",
-            mobile: "/images/devflow-mobile.jpg",
-          }}
         />
       </div>
-
-      {/* <div>
-        <div className="relative w-full">
-          <Image
-            src="/images/devflow.jpg"
-            alt="desktop-screenshot"
-            width={640}
-            height={200}
-            className="absolute bottom-0 z-10 h-auto w-3/4"
-          />
-          <Image
-            src="/images/devflow-tablet.jpg"
-            alt="desktop-screenshot"
-            width={640}
-            height={400}
-            className="absolute bottom-0 right-[10%] z-20 h-auto w-1/4"
-          />
-          <Image
-            src="/images/devflow-mobile.jpg"
-            alt="desktop-screenshot"
-            width={640}
-            height={400}
-            className="absolute bottom-0 right-0 z-30 h-auto w-[10%]"
-          />
-        </div>
-      </div> */}
     </section>
   );
 }

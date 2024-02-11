@@ -28,11 +28,11 @@ py-8 md:py-20  */
   }
 
   .image-tablet-web {
-    @apply  h-[250px] w-auto rounded-xl object-contain border-2
+    @apply  h-[250px] w-auto rounded-xl object-contain border-[1px] border-[#483c32]
   }
 
   .image-mobile {
-    @apply w-full h-auto rounded-xl object-contain border-2
+    @apply w-full h-auto rounded-xl object-contain border-[1px] border-[#483c32]
   }
 
   .image-container {

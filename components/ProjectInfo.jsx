@@ -16,35 +16,32 @@ const ProjectInfo = ({ title, onClick, isVisible, info, images }) => {
       {isVisible && (
         <>
           <p className="mb-5">{info}</p>
-          <div className="custom-scrollbar flex h-[350px] w-full gap-5 overflow-x-auto">
-            <div className="image-container">
-              <Image
-                src={images.web}
-                alt="desktop-screenshot"
-                width={600}
-                height={300}
-                className="image-mobile md:image-tablet-web"
-              />
+          {images && (
+            <div className="custom-scrollbar flex h-[350px] w-full gap-5 overflow-x-auto">
+              {images.web.map((image) => (
+                <div className="image-container" key={image}>
+                  <Image
+                    src={image}
+                    alt="web-screenshot"
+                    width={600}
+                    height={300}
+                    className="image-mobile md:image-tablet-web"
+                  />
+                </div>
+              ))}
+              {images.mobile.map((image) => (
+                <div className="image-container" key={image}>
+                  <Image
+                    src={image}
+                    alt="mobile-screenshot"
+                    width={600}
+                    height={300}
+                    className="image-tablet-web"
+                  />
+                </div>
+              ))}
             </div>
-            <div className="image-container">
-              <Image
-                src={images.tablet}
-                alt="tablet-screenshot"
-                width={600}
-                height={300}
-                className="image-tablet-web"
-              />
-            </div>
-            <div className="image-container">
-              <Image
-                src={images.mobile}
-                alt="mobile-screenshot"
-                width={600}
-                height={300}
-                className="image-tablet-web"
-              />
-            </div>
-          </div>
+          )}
         </>
       )}
     </div>
