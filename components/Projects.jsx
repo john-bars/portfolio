@@ -19,17 +19,18 @@ export default function Projects() {
   return (
     <section id="projects" ref={ref} className="section">
       <h2 className="title">My Projects</h2>
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-7">
         {portfolioProjects.map((project) => (
           <ProjectInfo
             key={project.title}
             title={project.title}
             info={project.info}
-            isVisible={visibleInfo === project.title}
-            onClick={toggleInfo}
             images={project.images}
             code={project.github}
             site={project.site}
+            tech={project.tech}
+            isVisible={visibleInfo === project.title}
+            onClick={toggleInfo}
           />
         ))}
       </div>

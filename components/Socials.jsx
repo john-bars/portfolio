@@ -21,7 +21,7 @@ const Socials = () => {
             title={social.name}
             className="group flex justify-end gap-3"
           >
-            <span className="hidden text-xs font-semibold tracking-widest md:group-hover:block">
+            <span className="hidden text-xs font-semibold tracking-widest text-blue-500 md:group-hover:block">
               {social.name}
             </span>
             <Image

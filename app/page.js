@@ -9,10 +9,12 @@ import {
   Socials,
   Intro,
 } from "../components";
+import { Toaster } from "react-hot-toast";
 
 export default function Home() {
   return (
     <ActiveSectionContextProvider>
+      <Toaster position="top-center" />
       <Logo />
       <Nav />
       <Socials />

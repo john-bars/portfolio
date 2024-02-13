@@ -27,20 +27,20 @@ py-8 md:py-20  */
     -ms-overflow-style: none;
   }
 
-  .image-tablet-web {
+  .mobile-screenshot {
     @apply  h-[250px] w-auto rounded-xl object-contain border-[1px] border-[#483c32]
   }
 
-  .image-mobile {
+  .web-screenshot {
     @apply w-full h-auto rounded-xl object-contain border-[1px] border-[#483c32]
   }
 
   .image-container {
-    @apply h-auto w-full md:w-auto shrink-0 p-3 border-[#483c32] border-2 flex justify-center items-center rounded-2xl
+    @apply h-auto w-full sm:w-auto shrink-0 p-5 border-[#483c32] border-2 flex justify-center items-center rounded-2xl
   }
 
   .intro {
-    @apply max-md:self-center text-4xl md:text-5xl lg:text-7xl font-semibold
+    @apply max-md:self-center text-4xl md:text-6xl lg:text-7xl font-semibold text-neutral-300
   }
 
   .logo {
@@ -63,9 +63,13 @@ py-8 md:py-20  */
   .socials {
     @apply fixed flex flex-col gap-2 max-md:hidden md:right-12 md:bottom-20 lg:right-24 bottom-24
   }
+
+  .paragraph {
+    @apply mb-8 text-justify text-[#cbcbcb] text-lg
+  }
   
   .title {
-    @apply mb-10 text-4xl text-white font-medium
+    @apply mb-10 text-4xl text-neutral-300 font-medium
   }
 
   .bground {
