@@ -39,7 +39,6 @@ const ProjectInfo = ({
             <div className="custom-scrollbar flex h-[350px] w-full gap-5 overflow-x-auto">
               {images.web.map((image) => (
                 <div className="image-container" key={image}>
-                  {/* <div className="image-container w-3/4 sm:w-1/2" key={image}> */}
                   <Image
                     src={image}
                     alt="web-screenshot"
