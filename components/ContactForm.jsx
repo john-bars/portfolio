@@ -7,7 +7,6 @@ import { sendEmail } from "@/actions/sendEmail";
 
 const ContactForm = () => {
   const formSubmit = async (formData) => {
-    await sendEmail(formData);
     const { error } = await sendEmail(formData);
     if (error) {
       console.log(error);

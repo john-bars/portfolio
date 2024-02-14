@@ -14,7 +14,7 @@ export default function SubmitBtn() {
       className={`${!pending && "hover:border-blue-500 hover:bg-blue-700 hover:text-neutral-300"} w-max self-center rounded-full border-2 border-transparent px-3 py-2 font-semibold text-blue-600`}
     >
       {pending ? (
-        <div className="size-6 animate-spin rounded-full border-b-2 border-blue-500"></div>
+        <div className="size-6 animate-spin rounded-full border-b-2 border-r-2 border-blue-500"></div>
       ) : (
         "Send Message"
       )}

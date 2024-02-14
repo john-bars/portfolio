@@ -8,15 +8,10 @@ import ContactFormEmail from "@/email/ContactFormEmail";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sendEmail = async (formData) => {
-  const senderName = formData.get("senderName");
-  const senderEmail = formData.get("senderEmail");
-  const subject =
-    formData.get("subject") !== ""
-      ? formData.get("subject")
-      : "Message from your Portfolio Site";
-  const message = formData.get("message");
-
-  console.log(senderName, senderEmail, subject, message);
+  const senderName = formData.get("senderName").trim();
+  const senderEmail = formData.get("senderEmail").trim();
+  const subject = formData.get("subject").trim();
+  const message = formData.get("message").trim();
 
   if (!validateString(senderEmail, 100)) {
     return { error: "Invalid sender email" };
@@ -29,13 +24,14 @@ export const sendEmail = async (formData) => {
   const { data, error } = await resend.emails.send({
     from: "Portfolio Message <onboarding@resend.dev>",
     to: "john.barsq@gmail.com",
-    subject,
+    subject: subject !== "" ? subject : "Message from your Portfolio Site",
     // text: message,
     reply_to: senderEmail,
     react: React.createElement(ContactFormEmail, {
       senderName,
       senderEmail,
       message,
+      subject,
     }),
   });
   if (error) {

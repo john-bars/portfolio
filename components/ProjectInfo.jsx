@@ -19,7 +19,7 @@ const ProjectInfo = ({
     <div className="flex flex-col items-start gap-4">
       <button
         onClick={() => onClick(title)}
-        className={`${isVisible ? "border-b-neutral-400" : "border-b-neutral-700 text-neutral-400"} flex w-full cursor-pointer justify-between border-b-2  pb-2 text-4xl font-medium md:text-5xl`}
+        className={`${isVisible ? "border-b-blue-500/80 text-blue-500/80" : "border-b-neutral-700 text-neutral-400"} flex w-full cursor-pointer justify-between border-b-2  pb-2 text-4xl font-medium md:text-5xl`}
       >
         <span className="truncate"> {title}</span>
         {isVisible ? <RiSubtractFill className="" /> : <MdAdd />}
@@ -28,26 +28,23 @@ const ProjectInfo = ({
         <>
           <p className="text-neutral-400">{info}</p>
           <div className="flex gap-5">
-            <button className="rounded-2xl border-2 border-neutral-600 px-5 py-2 font-semibold uppercase text-neutral-400 hover:border-blue-600 hover:bg-blue-600 hover:text-white">
-              <Link href={code} target="_blank">
-                code
-              </Link>
-            </button>
-            <button className="rounded-2xl border-2 border-neutral-600 px-5 py-2 font-semibold uppercase text-neutral-400 hover:border-blue-600 hover:bg-blue-600 hover:text-white">
-              <Link href={site} target="_blank">
-                site
-              </Link>
-            </button>
+            <Link href={code} target="_blank">
+              <button className="btn">Code</button>
+            </Link>
+            <Link href={site} target="_blank">
+              <button className="btn">Site</button>
+            </Link>
           </div>
           {images && (
             <div className="custom-scrollbar flex h-[350px] w-full gap-5 overflow-x-auto">
               {images.web.map((image) => (
-                <div className="image-container sm:w-3/4" key={image}>
+                <div className="image-container" key={image}>
+                  {/* <div className="image-container w-3/4 sm:w-1/2" key={image}> */}
                   <Image
                     src={image}
                     alt="web-screenshot"
-                    width={600}
-                    height={300}
+                    width={500}
+                    height={200}
                     className="web-screenshot"
                   />
                 </div>
@@ -57,7 +54,7 @@ const ProjectInfo = ({
                   <Image
                     src={image}
                     alt="mobile-screenshot"
-                    width={600}
+                    width={500}
                     height={250}
                     className="mobile-screenshot"
                   />
@@ -65,9 +62,12 @@ const ProjectInfo = ({
               ))}
             </div>
           )}
-          <ul className="flex flex-wrap justify-center gap-x-5 gap-y-3 text-xs font-semibold uppercase text-neutral-300">
-            {tech.map((item) => (
-              <li key={item} className="rounded-xl bg-neutral-700 px-3 py-2">
+          <ul className="flex flex-wrap justify-center gap-x-5 gap-y-3 text-xs">
+            {tech.map((item, index) => (
+              <li
+                key={index}
+                className="rounded-xl border border-neutral-700 px-3 py-2 text-neutral-500"
+              >
                 {item}
               </li>
             ))}
