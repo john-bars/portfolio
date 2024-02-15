@@ -41,7 +41,7 @@ export default function Contact() {
         </span>
         .
       </p>
-      {showForm && <ContactForm />}
+      {showForm && <ContactForm setShowForm={setShowForm} />}
 
       <Footer />
     </section>
