@@ -37,8 +37,8 @@ const ProjectInfo = ({
           </div>
           {images && (
             <div className="custom-scrollbar flex h-[350px] w-full gap-5 overflow-x-auto">
-              {images.web.map((image) => (
-                <div className="image-container" key={image}>
+              {images.web.map((image, index) => (
+                <div className="image-container" key={index}>
                   <Image
                     src={image}
                     alt="web-screenshot"
@@ -48,8 +48,8 @@ const ProjectInfo = ({
                   />
                 </div>
               ))}
-              {images.mobile.map((image) => (
-                <div className="image-container" key={image}>
+              {images.mobile.map((image, index) => (
+                <div className="image-container" key={index}>
                   <Image
                     src={image}
                     alt="mobile-screenshot"
