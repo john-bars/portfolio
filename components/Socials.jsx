@@ -5,12 +5,7 @@ import React from "react";
 
 const Socials = () => {
   return (
-    <ul
-      aria-label="Socials"
-      className="socials"
-      // className="fixed bottom-24 right-20 flex flex-col gap-2"
-      // className="fixed bottom-24 right-24 flex items-center gap-2 md:mb-2 md:justify-center lg:mb-6 lg:flex-col lg:items-start"
-    >
+    <ul aria-label="Socials" className="socials">
       {socials.map((social) => (
         <li key={social.name}>
           <Link

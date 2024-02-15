@@ -13,6 +13,8 @@ export const sendEmail = async (formData) => {
   const subject = formData.get("subject").trim();
   const message = formData.get("message").trim();
 
+  const sender = senderName !== "" ? senderName : senderEmail;
+
   if (!validateString(senderEmail, 100)) {
     return { error: "Invalid sender email" };
   }
@@ -22,10 +24,9 @@ export const sendEmail = async (formData) => {
   }
 
   const { data, error } = await resend.emails.send({
-    from: "Portfolio Message <onboarding@resend.dev>",
+    from: `Portfolio Message from ${sender} <onboarding@resend.dev>`,
     to: "john.barsq@gmail.com",
     subject: subject !== "" ? subject : "Message from your Portfolio Site",
-    // text: message,
     reply_to: senderEmail,
     react: React.createElement(ContactFormEmail, {
       senderName,
