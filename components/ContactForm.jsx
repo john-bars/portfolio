@@ -1,22 +1,42 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import SubmitBtn from "./SubmitBtn";
 import toast from "react-hot-toast";
 import { sendEmail } from "@/actions/sendEmail";
 
-const ContactForm = () => {
+const ContactForm = ({ setShowForm }) => {
+  const ref = useRef(null);
+
   const formSubmit = async (formData) => {
     const { error } = await sendEmail(formData);
     if (error) {
-      console.log(error);
       toast.error("Failed to send the message");
+    } else {
+      toast.success("Email sent successfully!");
+      ref.current.reset();
+      setShowForm(false);
     }
-    toast.success("Email sent successfully!");
   };
+
+  const handleOutSideClick = (event) => {
+    if (ref.current && !ref.current.contains(event.target)) {
+      setShowForm(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("mousedown", handleOutSideClick);
+
+    return () => {
+      window.removeEventListener("mousedown", handleOutSideClick);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <form
+      ref={ref}
       action={formSubmit}
       className="mx-auto mb-10 mt-5 flex w-full max-w-[600px] flex-col rounded-2xl border-2 border-neutral-700 bg-transparent p-5 sm:w-2/3 md:w-3/4"
     >
