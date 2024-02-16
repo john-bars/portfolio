@@ -7,6 +7,11 @@ export const metadata = {
   title: "John Bars Quipia",
   description:
     "Hi! I'm John Bars, a frontend developer specializing in React and Next.js.",
+  Image: {
+    url: "",
+    width: 1159,
+    height: 820,
+  },
 };
 
 export default function RootLayout({ children }) {
