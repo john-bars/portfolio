@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <footer
-      className={`${activeSection === "Contact" ? "absolute" : "hidden"} bottom-10 left-1/2 -translate-x-1/2 md:bottom-20`}
+      className={`${activeSection === "Contact" ? "fixed" : "hidden"} bottom-10 left-1/2 -translate-x-1/2 md:bottom-20`}
     >
       <div className="flex items-center gap-1 text-lg font-semibold text-neutral-300">
         <LuCopyright />

@@ -46,7 +46,7 @@ const ProjectInfo = ({
                   <Image
                     src={image}
                     alt="web-screenshot"
-                    width={500}
+                    width={300}
                     height={200}
                     className="web-screenshot"
                   />
@@ -57,7 +57,7 @@ const ProjectInfo = ({
                   <Image
                     src={image}
                     alt="mobile-screenshot"
-                    width={500}
+                    width={300}
                     height={250}
                     className="mobile-screenshot"
                   />
